@@ -85,13 +85,13 @@ function Travelledger() {
             console.log(response.data.journeys)
             setLoading(false)
             setData(response?.data?.journeys)
-            Anim()
+            // Anim()
         })
         .catch(error => {
             console.log(error)
             setLoading(false)
             setData([])
-            Anim()
+            // Anim()
         })
     }, [])
 
@@ -113,10 +113,7 @@ function Travelledger() {
 //     })
 // }
 
-    
 
-
-  
   
 
   
