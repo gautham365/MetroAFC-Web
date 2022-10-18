@@ -162,16 +162,13 @@ if (loading) {
             </tr>
         </thead>
         <tbody>
-            <tr className='trow'>
-                {data && Object.values(data[0]).map((item, index) => {
+            {data && data.map((item, index) => {
+            return <tr key={index} className='trow'>
+                {Object.values(item).map((item, index) => {
                     return <td key={index}>{item}</td>
                 })}
             </tr>
-            <tr className='trow'>
-            {data && Object.values(data[1]).map((item, index) => {
-                    return <td key={index}>{item}</td>
-                })}
-            </tr>
+            })}
             
 
         </tbody>
