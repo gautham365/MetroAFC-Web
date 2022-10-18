@@ -9,19 +9,89 @@ function Travelledger() {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+
+        const Anim = () => {
+            function animateDiv(myclass) {
+                var newq = makeNewPosition();
+                // console.log(newq)
+                // document.querySelector(myclass).animate([
+                //     // keyframes
+                //     { transform: `translate(${-newq[1]}px, ${newq[0]}px)` },
+                //     { transform: `translate(${newq[0]}px, ${newq[1]}px)` }
+                // ], {
+                //     // timing options
+                //     duration: 5000,
+                //     composite: {
+                //         add : {
+    
+                //         }
+                //     }
+                // });
+                document.querySelector(myclass).animate([
+                    // keyframes
+                    { transform: `translate(${newq[0]}%,${newq[1]}%)` },
+                    // { transform: `translate(${newq[2]}%,${Math.log(newq[2])}%)` },
+                    // { transform: `translateY(${newq[1]+newq[0]}%)` },
+                    // { transform: `translate(${newq[2]}px, ${0}px)` },
+                    // { transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` },
+                    { transform: `translateY(${newq[1]}%)` },
+                    { transform: `translateX(${newq[0]}%)` },
+                    // { transform: `translate(${newq[1]/2}px, ${newq[1]/2}px)` },
+                    // { transform: `translate(${newq[1]*1.5}px, ${0}px)` },
+                    // { transform: `translate(${newq[0]}px, ${newq[1]}px)` },
+                    // { transform: `translate(${newq[1]}px, ${0}px)` },
+                    { transform: `translate(${newq[1]}%,${newq[0]}%)` },
+                ], {
+                    // timing options
+                    duration: 10000,
+                    fill: 'forwards',
+                    // composite: {
+                    //     add : 
+                    //          "transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` "
+                    // },
+                    iterations: Infinity
+                });
+              }
+            animateDiv(".a");
+            animateDiv(".b");
+            animateDiv(".c");
+            animateDiv(".d");
+            animateDiv(".e");
+            animateDiv(".f");
+            animateDiv(".g");
+            animateDiv(".h");
+            animateDiv(".i");
+            animateDiv(".j");
+        }
+        
+    
+    
+      
+      function makeNewPosition() {
+        // Get viewport dimensions (remove the dimension of the div)
+        var h = window.innerHeight  ;
+        var w = window.innerWidth  ;
+        
+        var nh1 = Math.floor(Math.random() * h);
+        var nw1 = Math.floor(Math.random() * w);
+      
+        return [nh1, nw1, w];
+        // return [w, h,w];
+      }
+
         setLoading(true)
         axios.post(`${process.env.REACT_APP_HOST}/journeys/all`, {token: getToken()})
         .then(response => {
             console.log(response.data.journeys)
             setLoading(false)
             setData(response?.data?.journeys)
-            // Anim()
+            Anim()
         })
         .catch(error => {
             console.log(error)
             setLoading(false)
             setData([])
-            // Anim()
+            Anim()
         })
     }, [])
 
@@ -43,77 +113,7 @@ function Travelledger() {
 //     })
 // }
 
-    // const Anim = () => {
-    //     function animateDiv(myclass) {
-    //         var newq = makeNewPosition();
-    //         // console.log(newq)
-    //         // document.querySelector(myclass).animate([
-    //         //     // keyframes
-    //         //     { transform: `translate(${-newq[1]}px, ${newq[0]}px)` },
-    //         //     { transform: `translate(${newq[0]}px, ${newq[1]}px)` }
-    //         // ], {
-    //         //     // timing options
-    //         //     duration: 5000,
-    //         //     composite: {
-    //         //         add : {
 
-    //         //         }
-    //         //     }
-    //         // });
-    //         document.querySelector(myclass).animate([
-    //             // keyframes
-    //             { transform: `translate(${newq[0]}%,${newq[1]}%)` },
-    //             // { transform: `translate(${newq[2]}%,${Math.log(newq[2])}%)` },
-    //             // { transform: `translateY(${newq[1]+newq[0]}%)` },
-    //             // { transform: `translate(${newq[2]}px, ${0}px)` },
-    //             // { transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` },
-    //             { transform: `translateY(${newq[1]}%)` },
-    //             { transform: `translateX(${newq[0]}%)` },
-    //             // { transform: `translate(${newq[1]/2}px, ${newq[1]/2}px)` },
-    //             // { transform: `translate(${newq[1]*1.5}px, ${0}px)` },
-    //             // { transform: `translate(${newq[0]}px, ${newq[1]}px)` },
-    //             // { transform: `translate(${newq[1]}px, ${0}px)` },
-    //             { transform: `translate(${newq[1]}%,${newq[0]}%)` },
-    //         ], {
-    //             // timing options
-    //             duration: 10000,
-    //             fill: 'forwards',
-    //             // composite: {
-    //             //     add : 
-    //             //          "transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` "
-    //             // },
-    //             iterations: Infinity
-    //         });
-    //       }
-    //     animateDiv(".a");
-    //     animateDiv(".b");
-    //     animateDiv(".c");
-    //     animateDiv(".d");
-    //     animateDiv(".e");
-    //     animateDiv(".f");
-    //     animateDiv(".g");
-    //     animateDiv(".h");
-    //     animateDiv(".i");
-    //     animateDiv(".j");
-    // }
-    
-
-
-  
-//   function makeNewPosition() {
-//     // Get viewport dimensions (remove the dimension of the div)
-//     var h = window.innerHeight  ;
-//     var w = window.innerWidth  ;
-    
-//     var nh1 = Math.floor(Math.random() * h);
-//     var nw1 = Math.floor(Math.random() * w);
-  
-//     return [nh1, nw1, w];
-//     // return [w, h,w];
-//   }
-
-
-  
   
 
   
