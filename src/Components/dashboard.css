@@ -1,0 +1,56 @@
+.dash{
+  margin-top: 8vh;
+  padding: 1vh 2vw 0 2vw;
+}
+
+.subtitle{
+  color: white;
+}
+
+.stationContainer{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  color: aliceblue;
+}
+
+.qrCont {
+  margin-top: 1vh;
+}
+
+.qrCont  svg{
+    width: 30vw;
+    height: 30vw;
+    max-width: 400px;
+  }
+
+.stationDrop {
+  margin: 1vh;
+  /* padding: 0 1vw 0 1vw; */
+} 
+.stationDrop select option{
+  /* color: rgb(0, 0, 0); */
+  border: 1px solid white;
+  background-color: rgba(11, 11, 11, 0.88)
+}
+.stationDrop select {
+  color: rgb(255, 255, 255);
+  display: block;
+  height: 50px;
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1vw;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+
+
+
+  
