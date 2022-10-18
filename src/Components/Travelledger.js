@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useCallback, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { getToken } from '../Utils/Common';
 import './travelledger.css';
 
@@ -15,102 +15,102 @@ function Travelledger() {
             console.log(response.data.journeys)
             setLoading(false)
             setData(response?.data?.journeys)
-            Anim()
+            // Anim()
         })
         .catch(error => {
             console.log(error)
             setLoading(false)
             setData([])
-            Anim()
+            // Anim()
         })
     }, [])
 
-const handleSubmit = (e)=>{
-    e.preventDefault();
-    // console.log(e.target.age.value)
-    // console.log(e.target.q1.value)
-    // console.log(e.target.q2.value)
-    // console.log(e.target.q3.value)
-    setLoading(true);
-    axios.post(`${process.env.REACT_APP_HOST}/users/answers`,{token: getToken(), age: e.target.age.value, q1: e.target.q1.value, q2: e.target.q2.value, q3: e.target.q3.value})
-    .then((res)=>{
-        console.log(res.data.recom);
-        // setRecom({call: true, msg: res.data.recom});
-        setLoading(false);
-    })
-    .catch((error)=>{
-        console.log(error?.response?.data);
-    })
-}
+// const handleSubmit = (e)=>{
+//     e.preventDefault();
+//     // console.log(e.target.age.value)
+//     // console.log(e.target.q1.value)
+//     // console.log(e.target.q2.value)
+//     // console.log(e.target.q3.value)
+//     setLoading(true);
+//     axios.post(`${process.env.REACT_APP_HOST}/users/answers`,{token: getToken(), age: e.target.age.value, q1: e.target.q1.value, q2: e.target.q2.value, q3: e.target.q3.value})
+//     .then((res)=>{
+//         console.log(res.data.recom);
+//         // setRecom({call: true, msg: res.data.recom});
+//         setLoading(false);
+//     })
+//     .catch((error)=>{
+//         console.log(error?.response?.data);
+//     })
+// }
 
-    const Anim = () => {
-        function animateDiv(myclass) {
-            var newq = makeNewPosition();
-            // console.log(newq)
-            // document.querySelector(myclass).animate([
-            //     // keyframes
-            //     { transform: `translate(${-newq[1]}px, ${newq[0]}px)` },
-            //     { transform: `translate(${newq[0]}px, ${newq[1]}px)` }
-            // ], {
-            //     // timing options
-            //     duration: 5000,
-            //     composite: {
-            //         add : {
+    // const Anim = () => {
+    //     function animateDiv(myclass) {
+    //         var newq = makeNewPosition();
+    //         // console.log(newq)
+    //         // document.querySelector(myclass).animate([
+    //         //     // keyframes
+    //         //     { transform: `translate(${-newq[1]}px, ${newq[0]}px)` },
+    //         //     { transform: `translate(${newq[0]}px, ${newq[1]}px)` }
+    //         // ], {
+    //         //     // timing options
+    //         //     duration: 5000,
+    //         //     composite: {
+    //         //         add : {
 
-            //         }
-            //     }
-            // });
-            document.querySelector(myclass).animate([
-                // keyframes
-                { transform: `translate(${newq[0]}%,${newq[1]}%)` },
-                // { transform: `translate(${newq[2]}%,${Math.log(newq[2])}%)` },
-                // { transform: `translateY(${newq[1]+newq[0]}%)` },
-                // { transform: `translate(${newq[2]}px, ${0}px)` },
-                // { transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` },
-                { transform: `translateY(${newq[1]}%)` },
-                { transform: `translateX(${newq[0]}%)` },
-                // { transform: `translate(${newq[1]/2}px, ${newq[1]/2}px)` },
-                // { transform: `translate(${newq[1]*1.5}px, ${0}px)` },
-                // { transform: `translate(${newq[0]}px, ${newq[1]}px)` },
-                // { transform: `translate(${newq[1]}px, ${0}px)` },
-                { transform: `translate(${newq[1]}%,${newq[0]}%)` },
-            ], {
-                // timing options
-                duration: 10000,
-                fill: 'forwards',
-                // composite: {
-                //     add : 
-                //          "transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` "
-                // },
-                iterations: Infinity
-            });
-          }
-        animateDiv(".a");
-        animateDiv(".b");
-        animateDiv(".c");
-        animateDiv(".d");
-        animateDiv(".e");
-        animateDiv(".f");
-        animateDiv(".g");
-        animateDiv(".h");
-        animateDiv(".i");
-        animateDiv(".j");
-    }
+    //         //         }
+    //         //     }
+    //         // });
+    //         document.querySelector(myclass).animate([
+    //             // keyframes
+    //             { transform: `translate(${newq[0]}%,${newq[1]}%)` },
+    //             // { transform: `translate(${newq[2]}%,${Math.log(newq[2])}%)` },
+    //             // { transform: `translateY(${newq[1]+newq[0]}%)` },
+    //             // { transform: `translate(${newq[2]}px, ${0}px)` },
+    //             // { transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` },
+    //             { transform: `translateY(${newq[1]}%)` },
+    //             { transform: `translateX(${newq[0]}%)` },
+    //             // { transform: `translate(${newq[1]/2}px, ${newq[1]/2}px)` },
+    //             // { transform: `translate(${newq[1]*1.5}px, ${0}px)` },
+    //             // { transform: `translate(${newq[0]}px, ${newq[1]}px)` },
+    //             // { transform: `translate(${newq[1]}px, ${0}px)` },
+    //             { transform: `translate(${newq[1]}%,${newq[0]}%)` },
+    //         ], {
+    //             // timing options
+    //             duration: 10000,
+    //             fill: 'forwards',
+    //             // composite: {
+    //             //     add : 
+    //             //          "transform: `translate(${newq[2]}%,${Math.sin(newq[2])}%)` "
+    //             // },
+    //             iterations: Infinity
+    //         });
+    //       }
+    //     animateDiv(".a");
+    //     animateDiv(".b");
+    //     animateDiv(".c");
+    //     animateDiv(".d");
+    //     animateDiv(".e");
+    //     animateDiv(".f");
+    //     animateDiv(".g");
+    //     animateDiv(".h");
+    //     animateDiv(".i");
+    //     animateDiv(".j");
+    // }
     
 
 
   
-  function makeNewPosition() {
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = window.innerHeight  ;
-    var w = window.innerWidth  ;
+//   function makeNewPosition() {
+//     // Get viewport dimensions (remove the dimension of the div)
+//     var h = window.innerHeight  ;
+//     var w = window.innerWidth  ;
     
-    var nh1 = Math.floor(Math.random() * h);
-    var nw1 = Math.floor(Math.random() * w);
+//     var nh1 = Math.floor(Math.random() * h);
+//     var nw1 = Math.floor(Math.random() * w);
   
-    return [nh1, nw1, w];
-    // return [w, h,w];
-  }
+//     return [nh1, nw1, w];
+//     // return [w, h,w];
+//   }
 
 
   
