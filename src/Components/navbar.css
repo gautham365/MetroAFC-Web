@@ -49,6 +49,7 @@
     align-items: flex-end;
     flex-direction: row;
     justify-content: flex-end;
+    font-size: min(2vw, 18px);
     /* background-color: #79236a; */
 }
 

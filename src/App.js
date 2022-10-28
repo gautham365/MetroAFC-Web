@@ -11,9 +11,10 @@ import { getToken, removeUserSession, setUserSession } from "./Utils/Common";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar";
 import Dashboard from "./Components/Dashboard";
-import Updatedetails from "./Components/Updatedetails";
+// import Updatedetails from "./Components/Updatedetails";
 import "./App.css";
 import Travelledger from "./Components/Travelledger";
+import Topup from "./Components/Topup/Topup";
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
@@ -35,7 +36,7 @@ function App() {
         // setTimeout(()=>{socket.emit("test","1");setTimeout(()=>{socket.emit("test","2");setTimeout(()=>{socket.emit("test","3");setTimeout(()=>{socket.emit("test","4");setTimeout(()=>{socket.emit("test","5");},500);},500);},500);},500);},500);
       })
       .catch((error) => {
-        removeUserSession();
+        if (error?.response?.status === 401 ) removeUserSession();
         setAuthLoading(false);
         setAuth(false);
       });
@@ -45,8 +46,19 @@ function App() {
   }, []);
 
   if (authLoading && getToken()) {
-    return <div className="loadclass"><span className="loader-11"></span></div>;
-  }
+// return <div className="loadclass"><span className="loader-11"></span></div>;
+return <>
+<div className="loadclass-new">
+  <div className="spinner-box">
+<div className="configure-border-1">  
+  <div className="configure-core"></div>
+</div>  
+<div className="configure-border-2">
+  <div className="configure-core"></div>
+</div> 
+</div>
+</div>
+</>;  }
 
   return (
     <div className="App">
@@ -99,8 +111,8 @@ function App() {
                 // socket={socket}
               />
               <PrivateRoute
-                path="/updatedetails"
-                component={Updatedetails}
+                path="/topup"
+                component={Topup}
                 setAuth={setAuth}
                 setAuthLoading={setAuthLoading}
                 // socket={socket}

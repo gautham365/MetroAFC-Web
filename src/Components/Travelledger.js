@@ -119,8 +119,19 @@ function Travelledger() {
   
 
 if (loading) {
-    return <div className="loadclass"><span className="loader-11"></span></div>;
-  }
+// return <div className="loadclass"><span className="loader-11"></span></div>;
+return <>
+<div className="loadclass-new">
+  <div className="spinner-box">
+<div className="configure-border-1">  
+  <div className="configure-core"></div>
+</div>  
+<div className="configure-border-2">
+  <div className="configure-core"></div>
+</div> 
+</div>
+</div>
+</>;  }
 
   return (
     <div className='dash'>

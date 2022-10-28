@@ -1,4 +1,5 @@
 .dash{
+  display: block;
   margin-top: 8vh;
   padding: 1vh 2vw 0 2vw;
 }
@@ -24,7 +25,7 @@
   }
 
 .stationDrop {
-  margin: 1vh;
+  /* margin: 2vw 0 2vw 0; */
   /* padding: 0 1vw 0 1vw; */
 } 
 .stationDrop select option{
