@@ -94,7 +94,9 @@ input:not([type=button]) {
 ::placeholder{
     color: #e5e5e5;
 }
-input[type="button"]{
+/* select input with type button or submit */
+
+input[type="button"],input[type="submit"]{
     margin-top: 50px;
     width: 100%;
     background-color: #449d44;

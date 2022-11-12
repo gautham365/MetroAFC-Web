@@ -15,6 +15,7 @@ import Dashboard from "./Components/Dashboard";
 import "./App.css";
 import Travelledger from "./Components/Travelledger";
 import Topup from "./Components/Topup/Topup";
+import PaymentStatus from "./Components/PaymentStatus";
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
@@ -62,7 +63,19 @@ return <>
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter getUserConfirmation={(message, callback) => {
+        console.log('open modal here!')
+        const allowTransition = window.confirm(message)
+        // window.setTimeout(() => {
+          if (allowTransition) {
+            axios.post(`${process.env.REACT_APP_HOST}/payment/abort`, { token: getToken(), payment_id: localStorage.getItem("paymentId") })
+            localStorage.removeItem('paymentId');
+          }
+
+          callback(allowTransition)
+        // }, 1000)
+      }}
+      >
         <div>
           <Navbar  auth={auth} 
           setAuth={setAuth}
@@ -113,6 +126,13 @@ return <>
               <PrivateRoute
                 path="/topup"
                 component={Topup}
+                setAuth={setAuth}
+                setAuthLoading={setAuthLoading}
+                // socket={socket}
+              />
+              <PrivateRoute
+                path="/payment/status"
+                component={PaymentStatus}
                 setAuth={setAuth}
                 setAuthLoading={setAuthLoading}
                 // socket={socket}

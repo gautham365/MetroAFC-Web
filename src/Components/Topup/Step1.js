@@ -1,7 +1,24 @@
 import { QRCodeSVG } from "qrcode.react";
-import React from "react";
+import { useEffect } from 'react'
 
-function Step1(props) {
+// import { getToken } from '../../Utils/Common';
+
+function Step1({soc: socket, ...props}) {
+  // const socketRef = useRef(null);
+  useEffect(() => {
+    // if (socketRef.current == null) {
+    //   socketRef.current = io(`${process.env.REACT_APP_SOCKET}/?token=${getToken()}`);
+    // }
+
+    // const {current: socket} = socketRef;
+
+    // socket = io(`${process.env.REACT_APP_SOCKET}/?token=${getToken()}`);
+   
+    return () => {
+      // socket.disconnect({token: getToken()});
+    }
+  }, [socket,props])
+  
   return (
     <>
     <h1 className='subtitle' >Verify User</h1>
