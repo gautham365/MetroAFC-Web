@@ -11,8 +11,13 @@
   
   .contentAlert{
     position: relative;
-    height: 100%;
-    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 5vh auto;
+    width: 22vw;
+    height: 22vw;
+    align-items: center;
+    box-shadow: 5px 5px 5px;
     display: grid;
     grid-template-rows: 55% 45%;
   }
