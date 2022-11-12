@@ -50,7 +50,7 @@ body{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
-    z-index: 100;
+    z-index: 99;
 }
 .login{
     height: 520px;
@@ -94,7 +94,9 @@ input:not([type=button]) {
 ::placeholder{
     color: #e5e5e5;
 }
-input[type="button"]{
+/* select input with type button or submit */
+
+input[type="button"],input[type="submit"]{
     margin-top: 50px;
     width: 100%;
     background-color: #449d44;

@@ -41,7 +41,7 @@ history.push('/login');
             </Link></div>
             </div>
             <div className="shead2">
-            <div><Link className="link" to='/'>
+            <div><Link className="link" to='/topup'>
             <div className="menu">
               TOP UP
             </div>
