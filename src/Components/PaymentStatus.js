@@ -55,7 +55,7 @@ function PaymentStatus() {
     <div className='dash'>
     <h1 className='subtitle'>Payment Status</h1>
     {data.state?
-    <div className="wrapperAlert">
+    <div className="wrapperforAlert">
 
   <div className="contentAlert">
 
