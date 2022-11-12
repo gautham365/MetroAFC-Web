@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 // import io from 'socket.io-client';
 // import { getToken } from '../../Utils/Common';
 // const socket = io(`${process.env.REACT_APP_SOCKET}/?token=${getToken()}`);
