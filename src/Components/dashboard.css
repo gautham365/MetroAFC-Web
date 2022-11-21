@@ -24,10 +24,10 @@
     max-width: 400px;
   }
 
-.stationDrop {
-  /* margin: 2vw 0 2vw 0; */
-  /* padding: 0 1vw 0 1vw; */
-} 
+/* .stationDrop {
+  margin: 2vw 0 2vw 0; */
+  /* padding: 0 1vw 0 1vw;
+}  */
 .stationDrop select option{
   /* color: rgb(0, 0, 0); */
   border: 1px solid white;
