@@ -16,6 +16,7 @@ import "./App.css";
 import Travelledger from "./Components/Travelledger";
 import Topup from "./Components/Topup/Topup";
 import PaymentStatus from "./Components/PaymentStatus";
+import Paymentledger from "./Components/Paymentledger";
 
 function App() {
   const [authLoading, setAuthLoading] = useState(true);
@@ -119,6 +120,13 @@ return <>
               <PrivateRoute
                 path="/travel-ledger"
                 component={Travelledger}
+                setAuth={setAuth}
+                setAuthLoading={setAuthLoading}
+                // socket={socket}
+              />
+              <PrivateRoute
+                path="/payment-ledger"
+                component={Paymentledger}
                 setAuth={setAuth}
                 setAuthLoading={setAuthLoading}
                 // socket={socket}

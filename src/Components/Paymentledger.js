@@ -3,7 +3,7 @@ import React, {  useEffect, useState } from 'react'
 import { getToken } from '../Utils/Common';
 import './travelledger.css';
 
-function Travelledger() {
+function Paymentledger() {
     const [data, setData] = useState(false);
     const [aggs, setAggs] = useState(false);
     // const [recom, setRecom] = useState({call:false, msg: ""})
@@ -205,4 +205,4 @@ return <>
   )
 }
 
-export default Travelledger;
+export default Paymentledger;

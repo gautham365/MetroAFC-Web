@@ -46,6 +46,11 @@ history.push('/login');
               TOP UP
             </div>
              </Link></div>
+            <div><Link className="link" to='/payment-ledger'>
+            <div className="menu">
+              PAYMENTS
+            </div>
+            </Link></div>
             <div><Link className="link" to='/travel-ledger'>
             <div className="menu">
               ENTRY/EXITS

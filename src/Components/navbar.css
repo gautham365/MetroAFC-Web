@@ -44,7 +44,7 @@
 
 .shead2{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 30% 30% 30% 30%;
     flex: 4;
     align-items: flex-end;
     flex-direction: row;

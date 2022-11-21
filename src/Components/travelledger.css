@@ -1,7 +1,7 @@
 .ledger-table{
     width: 70%;
     height: auto;
-    padding-top: 0%;
+    padding: 50px 35px;
     transform: translate(20%,10%);
 }
 
@@ -64,6 +64,27 @@
     border: 2px solid white;
 }
 
+.ccard{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px 20px;
+    width: 15vw;
+    height: 10vw;
+    text-align: center;
+    margin-top: 5%;
+}
+.ccard div{
+    z-index: 2;
+}
+.mv{
+    margin-left: 10%;
+    font-weight: 300;
+}
+.fc{
+    margin-left: 30%;
+    font-weight: 300;
+}
 table, td, th {
     /* border: 1px solid black; */
    align-content: center;
