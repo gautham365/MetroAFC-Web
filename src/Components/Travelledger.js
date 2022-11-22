@@ -167,11 +167,11 @@ return <>
 
             
 
-        <select name="perpage" id="perpage">
+        {/* <select name="perpage" id="perpage">
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
-        </select>
+        </select> */}
         {/* </div> */}
         {/* <div className="options"> */}
 
