@@ -137,6 +137,13 @@ return <>
                 setAuthLoading={setAuthLoading}
                 // socket={socket}
               />
+              <PrivateRoute
+                path="/admin"
+                component={PaymentStatus}
+                setAuth={setAuth}
+                setAuthLoading={setAuthLoading}
+                // socket={socket}
+              />
 
             </Switch>
           </div>
