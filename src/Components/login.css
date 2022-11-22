@@ -42,9 +42,9 @@ body{
     bottom: -90px;
 }
 .glass-container{
-    background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
+    background-color: rgba(255,255,255,0.13);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
@@ -74,13 +74,13 @@ form h3{
     color: #c052ae;
 }
 
-label{
+label.inputLabel{
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
 }
-input:not([type=button]) {
+input:not([type=button]):not([type=submit]):not(.MuiInputBase-input) {
     display: block;
     height: 50px;
     width: 100%;

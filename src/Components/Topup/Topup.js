@@ -164,7 +164,7 @@ function Topup() {
             <div className="topupform">
               <form onSubmit={handleClick}>
                 <div className="form-group">
-                  <label htmlFor="amount">Amount</label>
+                  <label className="label" htmlFor="amount">Amount</label>
                   <input
                     type="number"
                     className="form-control"

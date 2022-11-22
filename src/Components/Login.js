@@ -61,10 +61,10 @@ return <>
     <form className='glass-container login'>
         <h3 className='brand-titl'>Metro AFC</h3>
 
-        <label>Username</label>
+        <label className="inputLabel">Username</label>
         <input type="text" placeholder="Email or Phone" id="username" {...username} autoComplete="new-password" />
 
-        <label>Password</label>
+        <label className="inputLabel">Password</label>
         <input type="password" placeholder="Password" id="password" {...password} autoComplete="new-password" />
         {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
         <input type="button" value={loading ? 'Loading...' : 'LOGIN'} onClick={handleLogin} disabled={loading} />
@@ -92,9 +92,9 @@ return <>
       <div className="containerL">
   <div className="brand-title">Metro AFC</div>
   <div className="inputs">
-    <label>Username</label>
+    <label className="inputLabel">Username</label>
     <input type="text" className="loginInput" {...username} autoComplete="new-password" />
-    <label>Password</label>
+    <label className="inputLabel">Password</label>
     <input type="password" className="loginInput" {...password} autoComplete="new-password" />
     {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}
     <input type="button" className="loginBtn" value={loading ? 'Loading...' : 'LOGIN'} onClick={handleLogin} disabled={loading} />

@@ -31,7 +31,8 @@ history.push('/login');
               {/* <div className="shead1"></div>
               <div className="shead2"></div> */}
             {/* </div> */}
-          {(props.auth)?
+            {console.log(history.location)}
+          {(props.auth) && history.location.pathname!=='/admin'?
           <>
           <div className="shead1">
           <div><Link className="link" to='/dashboard'>
