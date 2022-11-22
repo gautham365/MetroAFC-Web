@@ -81,11 +81,11 @@ function Paymentledger() {
       }
 
         setLoading(true)
-        axios.post(`${process.env.REACT_APP_HOST}/journeys/all`, {token: getToken()})
+        axios.post(`${process.env.REACT_APP_HOST}/payments/all`, {token: getToken()})
         .then(response => {
-            console.log(response.data.journeys)
+            console.log(response.data.payments)
             setLoading(false)
-            setData(response?.data?.journeys)
+            setData(response?.data?.payments)
             setAggs(response?.data?.aggregates)
             console.table(response?.data)
             Anim()
@@ -153,25 +153,25 @@ return <>
             <div className='shape1 j'></div>
         </div>
         <div className="ccard glass-container mv">
-                <div className="ccard-title">MV Station</div>
-                <div className="ccard-value1">{aggs?.mostvisited?.station}</div>
-                <div className="ccard-value1">{aggs?.mostvisited?.val}</div>
+                <div className="ccard-title">Most Preferred</div>
+                <div className="ccard-value1">{aggs?.mostpreferred?.bank_name}</div>
+                <div className="ccard-value1">{aggs?.mostpreferred?.val}</div>
             </div>
         <div className="ccard glass-container fc">
-                <div className="ccard-title">Total Fare</div>
+                <div className="ccard-title">Total Amount</div>
                 <div className="ccard-value1">{aggs?.totalfare?.val}</div>
             </div>
-    <div className="glass-container ledger-table">
+    <div style={{transform: 'translate(20%,12%)'}} className="glass-container ledger-table">
         
         <div className="options">
 
             
 
-        <select name="perpage" id="perpage">
+        {/* <select name="perpage" id="perpage">
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
-        </select>
+        </select> */}
         {/* </div> */}
         {/* <div className="options"> */}
 
@@ -181,11 +181,12 @@ return <>
         <thead >
             <tr className='trow thead'>
                 <th scope="col">id</th>
-                <th scope="col">Username</th>
-                <th scope="col">FROM</th>
-                <th scope="col">TO</th>
-                <th scope="col">Fare</th>
-                <th scope="col">Time</th>
+                <th scope="col">Payment Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Bank Name</th>
+                <th scope="col">Mode of Pay</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Last updated</th>
             </tr>
         </thead>
         <tbody>
